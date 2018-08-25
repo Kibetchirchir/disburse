@@ -25,4 +25,19 @@ Route::get('/company', function () {
     return view('companyregistration');
 });
 Route::post('/company/register',  'CompanyController@register');
+//Route::post('/company/shareholder/', 'CompanyController@shareholder');
+Route::post('{id}/shareholder', [
+    'middleware' => ['auth'],
+    'as'   => 'shareHolder',
+    'uses' => 'CompanyController@shareholder',
 
+]);
+
+
+Route::get('/company/shareholder/embed', function () {
+    return view('shareholdersregistration');
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/verifyemail/{token}', 'Auth\RegisterController@verify');

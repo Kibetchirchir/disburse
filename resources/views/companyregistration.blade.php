@@ -1,8 +1,10 @@
 @extends('layout.app')
 
 @section('content')
+    <div class="row container">
+        <div class="col-lg-4 col-lg-4">
     <h1>Company Registration</h1>
-    {!! Form::open(['url' => '/company/register']) !!}
+    {!! Form::open(['url' => '/company/register' ,'files' => true]) !!}
 
     <div class="form-group">
         {{Form::label('Companyname', 'Company name')}}
@@ -38,11 +40,31 @@
         {{Form::label('category', 'category')}}
 
         {{Form::text('category', '',["class" => "form-control", "placeholder" => "NGO"])}}
+        {{ Form::file('my_pdf') }}
     </div>
+            <div class="container">
+                <h3>contact person</h3>
+                <div class="form-group">
+                    {{Form::label('ContactName', 'Contact name')}}
+
+                    {{Form::text('ContactName', '',["class" => "form-control", "placeholder" => "Kelvin Chirchir"])}}
+                </div>
+                <div class="form-group">
+                    {{Form::label('ContactEmail', 'Contact email')}}
+
+                    {{Form::text('ContactEmail', '',["class" => "form-control", "placeholder" => "info@nouveta.tech"])}}
+                </div>
+                <div class="form-group">
+                    {{Form::label('ContactPhone', 'Phone number')}}
+
+                    {{Form::text('ContactPhone', '',["class" => "form-control required", "placeholder" => "254715428709"])}}
+                </div>
+            </div>
     <div>
         {{FORM::submit('Submit',["class" => "btn btn-primary"])}}
     </div>
 
     {!! Form::close() !!}
+            </div>
 
 @endsection
