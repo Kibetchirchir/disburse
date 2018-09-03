@@ -1,111 +1,231 @@
 @extends('layout.app')
 
 @section('content')
-    <div {width: 100%; height: 100%;}>
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="https://ticketsoko.com/juniorachievers.jpg" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="https://ticketsoko.com/juniorachievers.jpg" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="https://ticketsoko.com/juniorachievers.jpg" alt="Third slide">
+<!-- Start Slider Area -->
+<div id="home" class="slider-area">
+    <div class="bend niceties preview-2">
+        <div id="ensign-nivoslider" class="slides">
+            <img src="img/slider/slider1.jpg" alt="" title="#slider-direction-1" />
+            <img src="img/slider/slider2.jpg" alt="" title="#slider-direction-2" />
+            <img src="img/slider/slider3.jpg" alt="" title="#slider-direction-3" />
+        </div>
+
+        <!-- direction 1 -->
+        <div id="slider-direction-1" class="slider-direction slider-one">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="slider-content">
+                            <!-- layer 1 -->
+                            <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
+                                <h2 class="title1">The Best way to disburse funds </h2>
+                            </div>
+                            <!-- layer 2 -->
+                            <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                                <h1 class="title2">We're In The Business Of helping you disburse your funds</h1>
+                            </div>
+                            <!-- layer 3 -->
+                            <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
+                                <a class="ready-btn right-btn page-scroll" href="{{URL::to('/company')}}">signup</a>
+                                <a class="ready-btn page-scroll" href="#about">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="container">
-            <div class="card-deck mb-3 text-center">
-                <div class="card mb-4 shadow-sm">
-                    <div class="card-header">
-                        <h4 class="my-0 font-weight-normal">Free</h4>
-                    </div>
-                    <div class="card-body">
-                        <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li>24/7 services</li>
-                            <li>Amount disbursed Imediately</li>
-                            <li>Email support</li>
-                            <li>Help center access</li>
-                        </ul>
-                        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up here</button>
-                    </div>
-                </div>
-                <div class="card mb-4 shadow-sm">
-                    <div class="card-header">
-                        <h4 class="my-0 font-weight-normal">Pro</h4>
-                    </div>
-                    <div class="card-body">
-                        <h1 class="card-title pricing-card-title"> <small class="text-muted"></small></h1>
-                        <ul class="list-unstyled mt-3 mb-4 lead">
-                            <li>find out more</li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                        <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
-                    </div>
-                </div>
-                <div class="card mb-4 shadow-sm">
-                    <div class="card-header">
-                        <h4 class="my-0 font-weight-normal">Enterprise</h4>
-                    </div>
-                    <div class="card-body">
-                        <h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li>30 users included</li>
-                            <li>15 GB of storage</li>
-                            <li>Phone and email support</li>
-                            <li>Help center access</li>
-                        </ul>
-                        <button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button>
+        <!-- direction 2 -->
+        <div id="slider-direction-2" class="slider-direction slider-two">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="slider-content text-center">
+                            <!-- layer 1 -->
+                            <div class="layer-1-1 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
+                                <h2 class="title1">Tranfer made easy  </h2>
+                            </div>
+                            <!-- layer 2 -->
+                            <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                                <h1 class="title2">Transfer funds through mobile money</h1>
+                            </div>
+                            <!-- layer 3 -->
+                            <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
+                                <a class="ready-btn right-btn page-scroll" href="{{URL::to('/company')}}">signup</a>
+                                <a class="ready-btn page-scroll" href="#about">Learn More</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
 
-
-        <footer class="pt-4 my-md-5 pt-md-5 border-top">
-            <div class="row">
-                <div class="col-12 col-md">
-                    <img class="mb-2" src="../../assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">
-                    <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Features</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Cool stuff</a></li>
-                        <li><a class="text-muted" href="#">Random feature</a></li>
-                        <li><a class="text-muted" href="#">Team feature</a></li>
-                        <li><a class="text-muted" href="#">Stuff for developers</a></li>
-                        <li><a class="text-muted" href="#">Another one</a></li>
-                        <li><a class="text-muted" href="#">Last time</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Resources</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Resource</a></li>
-                        <li><a class="text-muted" href="#">Resource name</a></li>
-                        <li><a class="text-muted" href="#">Another resource</a></li>
-                        <li><a class="text-muted" href="#">Final resource</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>About</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Team</a></li>
-                        <li><a class="text-muted" href="#">Locations</a></li>
-                        <li><a class="text-muted" href="#">Privacy</a></li>
-                        <li><a class="text-muted" href="#">Terms</a></li>
-                    </ul>
+        <!-- direction 3 -->
+        <div id="slider-direction-3" class="slider-direction slider-two">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="slider-content">
+                            <!-- layer 1 -->
+                            <div class="layer-1-1 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
+                                <h2 class="title1">No quees </h2>
+                            </div>
+                            <!-- layer 2 -->
+                            <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                                <h1 class="title2">No worries of lines</h1>
+                            </div>
+                            <!-- layer 3 -->
+                            <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
+                                <a class="ready-btn right-btn page-scroll" href="{{URL::to('/company')}}">Sign up</a>
+                                <a class="ready-btn page-scroll" href="#about">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </footer>
+        </div>
     </div>
-6
+</div>
+<!-- End Slider Area -->
+<!-- Start About area -->
+<div id="about" class="about-area area-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="section-headline text-center">
+                    <h2>About eDisburse</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- single-well start-->
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="well-left">
+                    <div class="single-well">
+                        <a href="#">
+                            <img src="img/about/1.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- single-well end-->
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="well-middle">
+                    <div class="single-well">
+                        <a href="#">
+                            <h4 class="sec-head">Funds </h4>
+                        </a>
+                        <p>
+                           explanation here
+                            {{--Redug Lagre dolor sit amet, consectetur adipisicing elit. Itaque quas officiis iure aspernatur sit adipisci quaerat unde at nequeRedug Lagre dolor sit amet, consectetur adipisicing elit. Itaque quas officiis iure--}}
+                        </p>
+                        <ul>
+                            <li>
+                                <i class="fa fa-mobile"></i> Mpesa
+                            </li>
+                            <li>
+                                <i class="fa fa-bank"></i> Bank
+                            </li>
+                            <li>
+                                <i class="fa fa-dollar"></i> pesapal
+                            </li>
+                            <li>
+                                <i class="fa fa-bank"></i> equity
+                            </li>
+                            <li>
+                                <i class="fa fa-briefcase"></i> check
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- End col-->
+        </div>
+    </div>
+</div>
+<!-- End About area -->
+
+<!-- Start Service area -->
+<div id="services" class="services-area area-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="section-headline services-head text-center">
+                    <h2>Our Services</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="services-contents">
+                <!-- Start Left services -->
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="about-move">
+                        <div class="services-details">
+                            <div class="single-services">
+                                <a class="services-icon" href="#">
+                                    <i class="fa fa-mobile"></i>
+                                </a>
+                                <h4>Mobile money</h4>
+                                <p>
+                                    explanation
+                                </p>
+                            </div>
+                        </div>
+                        <!-- end about-details -->
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="about-move">
+                        <div class="services-details">
+                            <div class="single-services">
+                                <a class="services-icon" href="#">
+                                    <i class="fa fa-bank"></i>
+                                </a>
+                                <h4>bank</h4>
+                                <p>
+                                    bank explanation
+                                </p>
+                            </div>
+                        </div>
+                        <!-- end about-details -->
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <!-- end col-md-4 -->
+                    <div class=" about-move">
+                        <div class="services-details">
+                            <div class="single-services">
+                                <a class="services-icon" href="#">
+                                    <i class="fa fa-building"></i>
+                                </a>
+                                <h4>B2B</h4>
+                                <p>
+                                    ABOUT B2B
+                                </p>
+                            </div>
+                        </div>
+                        <!-- end about-details -->
+                    </div>
+                </div>
+                        <!-- end about-details -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Service area -->
+    {{--sign up--}}
+<div id="contact" class="contact-area">
+    <div class="contact-inner area-padding">
+        <div class="contact-overly"></div>
+        <div class="container ">
+            <!-- Start  contact -->
+
+            <!-- End Left contact -->
+        </div>
+    </div>
+</div>
+</div>
 
 @endsection

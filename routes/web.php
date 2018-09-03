@@ -27,7 +27,6 @@ Route::get('/company', function () {
 Route::post('/company/register',  'CompanyController@register');
 //Route::post('/company/shareholder/', 'CompanyController@shareholder');
 Route::post('{id}/shareholder', [
-    'middleware' => ['auth'],
     'as'   => 'shareHolder',
     'uses' => 'CompanyController@shareholder',
 
@@ -41,3 +40,30 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/verifyemail/{token}', 'Auth\RegisterController@verify');
+Route::get('/portal', function () {
+    return view('companyPortal');
+});
+
+Route::post('/create', [
+    'as'   => 'showEditUser',
+    'uses' => 'CompanyController@adduser',
+
+]);
+Route::get('/firsttime/{token}', [
+    'as'   => 'showEditUser',
+    'uses' => 'UserRegistration@verify',
+]);
+
+/**
+ * admin
+ */
+
+Route::post('/admin/doctype', [
+   'as' => 'adddocument',
+    'uses' => 'AdminController@DocumentType',
+]);
+
+Route::post('/admin/conttype', [
+    'as' => 'addContact',
+    'uses' => 'AdminController@ContactsType',
+]);

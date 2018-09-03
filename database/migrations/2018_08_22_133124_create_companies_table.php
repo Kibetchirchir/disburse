@@ -14,13 +14,14 @@ class CreateCompaniesTable extends Migration
     public function up()
     {
         Schema::create('companies', function (Blueprint $table) {
+
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('companyName');
             $table->string('PhysicallAdress');
             $table->string('postallAdress');
-            $table->string('GPS');
-            $table->string('phone');
-            $table->string('KRA');
+            $table->string('GPS')->nullable()->default(NULL);
+            $table->string('aproved')->default(0);
             $table->string('category');
             $table->timestamps();
         });

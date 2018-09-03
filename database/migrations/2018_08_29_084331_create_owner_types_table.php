@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContactPeopleTable extends Migration
+class CreateOwnerTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateContactPeopleTable extends Migration
      */
     public function up()
     {
-        Schema::create('contact_people', function (Blueprint $table) {
+        Schema::create('owner_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('email');
-            $table->string('phone');
-            $table->integer('company_id');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateContactPeopleTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contact_people');
+        Schema::dropIfExists('owner_types');
     }
 }

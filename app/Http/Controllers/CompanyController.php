@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Company;
 use App\ContactPerson;
 use App\ShareHolder;
-use  Illuminate\Support\Facades\Input;
+use App\User;
+use App\Jobs\SendVerificationEmail;
+use App\Jobs\SendManagerEmail;
 
 class CompanyController extends Controller
 {
@@ -26,7 +28,8 @@ class CompanyController extends Controller
              'KRA' => 'required',
              'category' => 'required',
              'ContactName'=>'required',
-             'ContactEmail'=>'required'
+             'ContactEmail'=>'required',
+             'ManagerEmail'=>'required'
          ]);
          /*
           * upload
@@ -34,6 +37,7 @@ class CompanyController extends Controller
 
          /*
           * todo documents upload here
+          *
           */
         //create new company
 
@@ -45,6 +49,7 @@ class CompanyController extends Controller
         $company->phone=$request->input('phone');
         $company->KRA=$request->input('KRA');
         $company->category=$request->input('category');
+        $company->email=$request->input('ManagerEmail');
 
         //save the company
         $company->save();
@@ -61,11 +66,34 @@ class CompanyController extends Controller
 
         //save
         $contact->save();
-        //redirect
 
-        return view('shareholdersregistration',
-            ['id' => $key,
-            'status' =>'company created your key is '.$key]);
+        /*
+         * manager
+         */
+        $email=$request->input('ManagerEmail');
+        /*
+         * manager password random
+         */
+        $rand = substr(md5(microtime()),rand(0,26),5);
+
+        $user=new User;
+        $user->name=$request->input('ManagerName');
+        $user->email=$request->input('ManagerEmail');
+        $user->password=bcrypt($rand);
+        $user->role='manager';
+        $user->email_token=base64_encode($email);
+        $user->company_id=$key;
+
+        $user->save();
+
+        /*
+         * send email
+         */
+
+        dispatch(new SendManagerEmail($user));
+
+
+        return redirect('/company')->with('status','account created once the account is created youll receive a notification');
     }
     /*
      * shareholders information
@@ -97,7 +125,8 @@ class CompanyController extends Controller
         /*
          * redirect
          */
-        return redirect('/')->with('status','shareholder information updated');
+        return redirect('/')->with('status','account created once the account is created youll receive a notification');
 
     }
+
 }
